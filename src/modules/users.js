@@ -27,7 +27,6 @@ const User = {
     },
     deleteUser(index) {
         list.splice(index, 1);
-        console.log(list)
     }
 }
 
