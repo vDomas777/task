@@ -1,5 +1,18 @@
 const list = [
- 
+    {
+        firstName: 'Vardenis',
+        lastName: 'Pavardenis',
+        email: 'pavardenisvardenis@outlook.com',
+        country: 'Lithuania',
+        address: 'Gatvė g., 11, Vilnius'
+    },
+    {
+        firstName: 'Vardenis',
+        lastName: 'Pavardenis',
+        email: 'pavardenisvardenis@outlook.com',
+        country: 'Lithuania',
+        address: 'Gatvė g., 11, Vilnius'
+    },
 ];
 
 const User = {

@@ -13,8 +13,5 @@ export default {
         DefaultLayout,
         Heading
     },
-    mounted() {
-        console.log(User.getUsers())
-    }
 }
 </script>
