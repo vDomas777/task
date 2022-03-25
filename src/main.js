@@ -4,4 +4,5 @@ import Router from './routes.js'
 import './assets/tailwind.css'
 import 'flowbite';
 
-createApp(App).use(Router).mount('#app')
+
+const app = createApp(App).use(Router).mount('#app');
