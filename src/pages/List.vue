@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        Home Page
+        user List page
     </default-layout>
 </template>
 <script>

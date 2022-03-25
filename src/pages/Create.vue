@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        Home Page
+        Create User page
     </default-layout>
 </template>
 <script>
