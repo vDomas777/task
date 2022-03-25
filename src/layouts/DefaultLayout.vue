@@ -17,15 +17,18 @@
         </div>
     </nav>
     <div class="container mx-auto pt-4">
+        <breadcrumbs />
         <slot />
     </div>
 </template>
 <script>
 import NavLink from '@/components/navbar/NavLink.vue'
+import Breadcrumbs from '@/components/Breadcrumbs.vue'
 export default {
     name: 'DefaultLayout',
     components: {
-        NavLink
+        NavLink,
+        Breadcrumbs
     }
 }
 </script>

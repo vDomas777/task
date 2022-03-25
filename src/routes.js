@@ -8,22 +8,46 @@ const routes = [
     {
         name: 'Home',
         path: '/',
-        component: Home
+        component: Home,
+        meta: {
+            breadcrumb: [
+                { name: 'Home' }
+            ]
+        }
     },
     {
         name: 'Create',
         path: '/create',
-        component: Create
+        component: Create,
+        meta: {
+            breadcrumb: [
+                { name: 'Home', link: '/' },
+                { name: 'Create User' }
+            ]
+        }
     },
     {
         name: 'List',
         path: '/list',
-        component: List
+        component: List,
+        meta: {
+            breadcrumb: [
+                { name: 'Home', link: '/' },
+                { name: 'Users List' }
+            ]
+        }
     },
     {
         name: 'Edit',
-        path: '/edit/:id',
-        component: Edit
+        path: '/list/edit/:id',
+        component: Edit,
+        meta: {
+            breadcrumb: [
+                { name: 'Home', link: '/' },
+                { name: 'Users List', link: '/list/' },
+                { name: 'Edit' },
+            ]
+        }
     }
 ];
 

@@ -3,7 +3,7 @@
         <div class="searchbar m-4 md:m-0">
             <search-bar v-bind:value="searchFilter" v-on:input="searchFilter = $event.target.value" />
         </div>
-        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative block md:inline-table whitespace-nowrap overflow-x-auto">
+        <table class="border-collapse table-auto w-full whitespace-no-wrap bg-white table-striped relative block xl:inline-table whitespace-nowrap overflow-x-auto">
             <thead> 
                 <tr class="text-left">
                     <th 
