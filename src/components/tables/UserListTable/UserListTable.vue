@@ -35,6 +35,7 @@
                     </data-cell>
                     <data-cell>
                         <edit-button title="Edit" :index="index" />
+                        <delete-button @click="removeUser(index)" title="Delete" class="ml-2"/>
                     </data-cell>
                 </tr>
             </tbody>
@@ -43,14 +44,17 @@
 </template>
 <script>
 import EditButton from './buttons/EditButton.vue'
+import DeleteButton from './buttons/DeleteButton.vue'
 import DataCell from './DataCell.vue'
 import SearchBar from './SearchBar.vue'
+import User  from '@/modules/users'
 export default {
     props: {
         users: Array,
     },
     components: {
         EditButton,
+        DeleteButton,
         DataCell,
         SearchBar
     },
@@ -80,6 +84,14 @@ export default {
                 },
             ],
         }
+    },
+    methods: {
+        removeUser(index) {
+            if(confirm("Do you really want to delete user?")) {
+                User.deleteUser(index)
+                this.$forceUpdate()
+            }
+        },
     },
     computed: {
         filteredUsers() {

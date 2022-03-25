@@ -19,11 +19,15 @@ const User = {
     getUsers() {
         return list
     },
-    getUser(id) {
-        return list[id]
+    getUser(index) {
+        return list[index]
     },
     addUser(data) {
         list.push(data)
+    },
+    deleteUser(index) {
+        list.splice(index, 1);
+        console.log(list)
     }
 }
 
