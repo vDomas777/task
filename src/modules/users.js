@@ -19,6 +19,9 @@ const User = {
     getUsers() {
         return list
     },
+    getUser(id) {
+        return list[id]
+    },
     addUser(data) {
         list.push(data)
     }

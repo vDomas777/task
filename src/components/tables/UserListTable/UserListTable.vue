@@ -34,7 +34,7 @@
                         {{ user.address}}
                     </data-cell>
                     <data-cell>
-                        <edit-button title="Edit" />
+                        <edit-button title="Edit" :index="index" />
                     </data-cell>
                 </tr>
             </tbody>
