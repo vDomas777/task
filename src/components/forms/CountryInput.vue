@@ -40,6 +40,7 @@ export default {
       this.$emit('clicked', country);
     },
     activeSearch(event) {
+      this.$emit('clear', null);
       this.countryDrop = true;
       if (event != null) {
         this.countrySearch = event.target.value;

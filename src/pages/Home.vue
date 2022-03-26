@@ -2,7 +2,6 @@
     <default-layout>
         <heading title="Home" subTitle="This is a home page..." class="mb-4" />
         <users-statistics :usersCount="usersCount" />
-        
     </default-layout>
 </template>
 <script>
