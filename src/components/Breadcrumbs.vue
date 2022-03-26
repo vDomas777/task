@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumb pb-4">
+  <div class="breadcrumb pb-4 px-4 md:px-0">
     <ul>
       <li
         v-for="(breadcrumb, idx) in breadcrumbList"

@@ -11,7 +11,7 @@
                 <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
                     <nav-link to="/" name="Home" />
                     <nav-link to="/create" name="Create User" />
-                    <nav-link to="/list" name="User List" />
+                    <nav-link to="/list" name="Users List" />
                 </ul>
             </div>
         </div>

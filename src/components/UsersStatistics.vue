@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-1/5">
+  <div class="w-full lg:w-1/5 px-4 md:px-0">
     <div
       class="widget w-full p-4 rounded-lg bg-white border-l-4 border-blue-400"
     >

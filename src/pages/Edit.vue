@@ -6,13 +6,12 @@
 <script>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import Heading from '@/components/typography/Heading.vue'
-import User  from '@/modules/users'
+import { store } from '@/store.js'
 export default {
     name: 'Edit',
     components: {
         DefaultLayout,
         Heading,
-        User
     },
     data() {
         return {
@@ -21,7 +20,7 @@ export default {
         }
     },
     mounted() {
-        this.currentUser = User.getUser(this.id)
+        this.currentUser = store.users[this.id]
     }
 }
 </script>

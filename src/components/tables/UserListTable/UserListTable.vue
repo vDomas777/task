@@ -47,7 +47,7 @@ import EditButton from './buttons/EditButton.vue'
 import DeleteButton from './buttons/DeleteButton.vue'
 import DataCell from './DataCell.vue'
 import SearchBar from './SearchBar.vue'
-import User  from '@/modules/users'
+import { store } from '@/store.js'
 export default {
     props: {
         users: Array,
@@ -88,8 +88,7 @@ export default {
     methods: {
         removeUser(index) {
             if(confirm("Do you really want to delete user?")) {
-                User.deleteUser(index)
-                this.$forceUpdate()
+                store.users.splice(index, 1)
             }
         },
     },

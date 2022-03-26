@@ -8,7 +8,7 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import Heading from '@/components/typography/Heading.vue'
 import UsersStatistics from '@/components/UsersStatistics.vue'
-import User  from '@/modules/users'
+import { store } from '@/store.js'
 export default {
     name: 'Home',
     components: {
@@ -18,7 +18,7 @@ export default {
     },
     data() {
         return {
-            usersCount: User.getUsers().length
+            usersCount: store.users.length
         }
     }
 }

@@ -6,7 +6,7 @@
 <script>
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import Heading from '@/components/typography/Heading.vue'
-import User  from '@/modules/users'
+import { store } from '@/store.js'
 export default {
     name: 'Home',
     components: {
