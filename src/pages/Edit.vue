@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        <!-- <heading title="Edit" :subTitle="`In this page you can edit ${currentUser.firstName} ${currentUser.lastName}...`" /> -->
+        <heading title="Edit" subTitle="In this page you can edit user" /> 
         <edit-user  />
     </default-layout>
 </template>
