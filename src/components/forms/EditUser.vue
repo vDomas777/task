@@ -104,18 +104,18 @@
     </div>
     <div class="flex gap-2 md:gap-4 flex-col md:flex-row items-center">
       <div class="w-full px-4 sm:px-32 md:px-0 py-2 md:py-0 md:w-1/2">
-        <submit-button title="Create User" @click="submitForm" />
+        <submit-button title="Update User" @click="updateUser" />
       </div>
     </div>
   </div>
 </template>
 <script>
+import { store } from "@/store.js";
 import FormLabel from "@/components/forms/Label.vue";
 import CustomInput from "@/components/forms/CustomInput.vue";
 import CountryInput from "@/components/forms/CountryInput.vue";
 import SubmitButton from "@/components/forms/SubmitButton.vue";
 import useVuelidate from "@vuelidate/core";
-import { store } from "@/store.js";
 import {
   required,
   email,
@@ -135,6 +135,7 @@ export default {
         address: null,
         country: null,
       },
+      id: this.$route.params.id,
     };
   },
   validations() {
@@ -167,12 +168,6 @@ export default {
       },
     };
   },
-  components: {
-    FormLabel,
-    CustomInput,
-    CountryInput,
-    SubmitButton,
-  },
   methods: {
     setData(data) {
       this.user.country = data;
@@ -180,21 +175,34 @@ export default {
     clearData(data) {
       this.user.country = data;
     },
-    async submitForm() {
+    async updateUser() {
       const result = await this.v$.$validate();
       if (!result) {
         //
         return;
       }
-      this.users.push({
+      this.users[this.id] = {
         firstName: this.user.firstName,
         lastName: this.user.lastName,
         email: this.user.email,
-        country: this.user.country,
         address: this.user.address,
-      });
-      this.$router.push("List");
+        country: this.user.country,
+      };
+      this.$router.go(-1);
     },
+  },
+  mounted() {
+    this.user.firstName = store.users[this.id].firstName;
+    this.user.lastName = store.users[this.id].lastName;
+    this.user.email = store.users[this.id].email;
+    this.user.address = store.users[this.id].address;
+    this.user.country = store.users[this.id].country;
+  },
+  components: {
+    FormLabel,
+    CustomInput,
+    CountryInput,
+    SubmitButton,
   },
 };
 </script>

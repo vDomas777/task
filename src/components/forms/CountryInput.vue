@@ -2,7 +2,7 @@
     <div>
         <custom-input @focus="activeSearch()" @input="activeSearch($event)" @blur="closeDrop()" type="text" name="country"
           placeholder="Search by country..."
-          v-bind:value="countrySearch"
+          v-bind="$attrs"
           required
         />
         <div class="absolute bg-white shadow-sm py-4 px-2 rounded w-full flex flex-row flex-wrap gap-2 max-h-72 overflow-y-auto" v-if="countryDrop">
@@ -26,21 +26,28 @@ export default {
             countryDrop: false,
             countrySearch: "",
             data: "",
+            country: '',
+            selected: false
         }
     },
     methods: {
     closeDrop() {
+      if(this.selected == false) {
+        this.$emit('clear', null);
+      }
       setTimeout(() => {
         this.countryDrop = false;
       }, 100);
     },
     selectContry(country) {
       this.countryDrop = false;
-      this.countrySearch = country;
       this.$emit('clicked', country);
+      this.country = country
+      this.selected = true
     },
     activeSearch(event) {
       this.$emit('clear', null);
+      this.selected = false
       this.countryDrop = true;
       if (event != null) {
         this.countrySearch = event.target.value;
